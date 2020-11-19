@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    @import url("https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap");
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 89vh;
+}
+
+.left {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.parent{
+    border-right: 2px solid  #0097ff ;
+    border-left: 2px solid #4f46a5;;
+    width: 30%;
+    margin-left: 33%;
+    padding-left: 40px;
+    margin-top: 1%;
+}
+
+.header > h1 {
+  margin: 0;
+  color: #4f46a5;
+  margin-left: 18%;
+}
+
+.header > h4 {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.form {
+  max-width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.form > p {
+  text-align: right;
+}
+
+.form > p > a {
+  color: #000;
+  font-size: 14px;
+}
+
+.form-field {
+  height: 46px;
+  padding: 0 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Rubik', sans-serif;
+  outline: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+  margin-top: 20px;
+}
+
+.form-field:focus {
+  border-color: #0f7ef1;
+}
+
+.form > button {
+  padding: 12px 10px;
+  border: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#de48b5), to(#0097ff));
+  background: linear-gradient(to right, #de48b5 0%, #0097ff 100%);
+  border-radius: 3px;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.to-register{
+  color:rgba(0, 0, 0, 0.8)
+}
+
+    </style>
+</head>
+<body>
+
+  <div class ="parent">
+    <div class="container">
+        <div class="left">
+          <div class="header">
+            <h1 class="animation a1">Welcome Back</h1>
+            <h4 class="animation a2">Log in to your account using email and password</h4>
+            <%- include('partial/messages') %>
+          </div>
+          <form action="users/login" method="POST">
+          <div class="form">
+            <input type="email" name="email" class="form-field animation a3" placeholder="Email Address">
+            <input type="password" name="password" class="form-field animation a4" placeholder="Password">
+            <p></p>
+            <button type="submit" class="animation a6">LOGIN</button>
+            <p class="to-register">Don't have an account?<a href="/users/register"> Register</a></p>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+   
+    </body>
+</html>
