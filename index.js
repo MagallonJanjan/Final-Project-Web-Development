@@ -9,24 +9,22 @@ const path = require('path')
 
 const app = express();
 
-const db = 'mongodb://127.0.0.1/management';
 
-// Connect to MongoDB
-mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true ,useUnifiedTopology: true}
-  )
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+
+
+//Database setup
+const database = require("./services/dbConnection");
+database.connect();
+
+  // Passport Config
+require('./middleware/passport')(passport);
 
   // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
 
-
-//BodyParser
+ //BodyParser
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
@@ -43,10 +41,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // Connect flash
 app.use(flash());
+
+//Index route
 app.use('/', require('./routes/indexRoute'))
+// User route
 app.use('/users', require('./routes/userRoute'))
 
 
@@ -57,7 +57,6 @@ app.use(function(req, res, next) {
   res.locals.error = req.flash('error');
   next();
 });
-
 
 const PORT = process.env.PORT || 8000;
 

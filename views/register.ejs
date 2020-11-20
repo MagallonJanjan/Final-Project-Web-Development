@@ -29,7 +29,7 @@
         .parent {
             border-right: 2px solid #0097ff;
             border-left: 2px solid #4f46a5;
-            ;
+
             width: 30%;
             margin-left: 33%;
             padding-left: 40px;
@@ -39,7 +39,7 @@
         .header>h1 {
             margin: 0;
             color: #4f46a5;
-            margin-left: 33%;
+            margin-left: 29%;
         }
 
         .header>h4 {
@@ -83,7 +83,7 @@
             border-color: #0f7ef1;
         }
 
-        .form>button {
+        #register {
             padding: 12px 10px;
             border: 0;
             background: -webkit-gradient(linear, left top, right top, from(#de48b5), to(#0097ff));
@@ -93,9 +93,12 @@
             color: #fff;
             letter-spacing: 1px;
             font-family: 'Rubik', sans-serif;
+            width: 93%;
         }
         .to-login{
-            color: rgba(0, 0, 0, 0.8)
+            color: rgba(0, 0, 0, 0.8);
+            float: right;
+            margin-right: 7%;
         }
       
     </style>
@@ -110,18 +113,20 @@
                     <h4 class="animation a2">Create your own account using the following fields</h4>
                     <%- include('partial/messages') %>
                 </div>
-                <form action="/users/register" method="POST">
                 <div class="form">
+                    <form action="/users/register" method="POST" autocomplete="off">
                     <input type="text" class="form-field " name="firstname" placeholder="First Name" value="<%= typeof firstname != 'undefined' ? firstname : '' %>">
                     <input type="text" class="form-field" name="lastname"  placeholder="Last Name" value="<%= typeof lastname != 'undefined' ? lastname : '' %>">
+                    <input type="text" class="form-field"  name="address" placeholder="Address" value="<%= typeof address != 'undefined' ? address : '' %>">
                     <input type="email" class="form-field"  name="email" placeholder="Email Address" value="<%= typeof email != 'undefined' ? email : '' %>">
                     <input type="password"  class="form-field" name="password1" placeholder="Password" value="<%= typeof password1 != 'undefined' ? password1 : '' %>">
                     <input type="password" class="form-field" name="password2" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
                     <p></p>
-                    <button type="submit" class="animation ">Create Account</button>
+                    <button type="submit" id="register" class="animation ">Create Account</button>
                    <p class="to-login">Have an account? <a class="login" href="/users/login">Login</a></p>
+                </form>
                 </div>
-            </form>
+            
             </div>
         </div>
     </div>
