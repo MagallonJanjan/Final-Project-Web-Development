@@ -11,7 +11,6 @@ const app = express();
 
 
 
-
 //Database setup
 const database = require("./services/dbConnection");
 database.connect();

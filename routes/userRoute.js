@@ -5,8 +5,8 @@ const { forwardAuthenticated } = require('../middleware/authentication');
 const passport = require('passport')
 
 
-router.get('/login', forwardAuthenticated,(req, res) => res.render('login'))
-router.get('/register', forwardAuthenticated, (req, res) => res.render('register'))
+router.get('/login', forwardAuthenticated,(req, res) => res.render('forms/login'))
+router.get('/register', forwardAuthenticated, (req, res) => res.render('forms/register'))
 
 
 //Handle Registration
