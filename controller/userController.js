@@ -2,8 +2,6 @@ const bcrypt = require('bcryptjs')
 const { forwardAuthenticated } = require('../middleware/authentication');
 const passport = require('passport')
 
-
-
 //Import user model
 const User = require('../models/userModel');
 
@@ -78,24 +76,14 @@ const userRegistration = (req, res) => {
     }
 };
 
-//Handle user login
-// var userLogin = (req,res, next) =>{
+
+// const userLogin = (req, res, next) => {
 //     passport.authenticate('local', {
-//         successRedirect: '/dashboard',
-//         failureRedirect: '/users/login',
-//         failureFlash: true
-//       });
-//       (req, res, next);
-// }
-
-
-const userLogin = (req, res, next) => {
-    passport.authenticate('local', {
-      successRedirect: '/dashboard',
-      failureRedirect: '/users/login',
-      failureFlash: true
-    })(req, res, next);
-  };
+//       successRedirect: '/dashboard',
+//       failureRedirect: '/users/login',
+//       failureFlash: true
+//     })(req, res, next);
+//   };
 
 
 //Handle user logout
@@ -108,7 +96,7 @@ const userLogout = (req,res) =>{
 
 module.exports = {
     userRegistration,
-    userLogin,
+   //userLogin,
     userLogout
 
 }

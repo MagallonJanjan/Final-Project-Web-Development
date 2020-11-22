@@ -5,82 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <style>
-        @import url("https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap");
-
         body {
             font-family: 'Rubik', sans-serif;
         }
 
-        .container {
-            display: flex;
-            height: 89vh;
-        }
-
-        .left {
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            flex-direction: column;
-            -webkit-box-pack: center;
-            justify-content: center;
-        }
-
-        .parent {
-            border-right: 2px solid #0097ff;
-            border-left: 2px solid #4f46a5;
-
-            width: 30%;
-            margin-left: 33%;
-            padding-left: 40px;
-            margin-top: 2%;
-        }
-
-        .header>h1 {
+       .header>h1 {
             margin: 0;
-            color: #4f46a5;
-            margin-left: 29%;
+            color: #4f46a5; 
+            font-family: 'Rubik', sans-serif;
         }
 
-        .header>h4 {
+        .header>h4{
             margin-top: 10px;
             font-weight: normal;
-            font-size: 15px;
+            font-size: 19px;
             color: rgba(0, 0, 0, 0.4);
         }
 
         .form {
-            max-width: 100%;
-            display: -webkit-box;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            flex-direction: column;
+            width: 42%;
+            margin-top: 5%;
+            border-right: 2px solid #0097ff;
+            border-left: 2px solid #4f46a5;
         }
 
-        .form>p {
-            text-align: right;
-        }
-
-        .form>p>a {
-            color: #000;
+        .message {
+            color: red;
             font-size: 14px;
+            margin-left: 11%;
+            
         }
-
-        .form-field {
-            height: 46px;
-            padding: 0 16px;
-            border: 2px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Rubik', sans-serif;
-            outline: 0;
-            -webkit-transition: .2s;
-            transition: .2s;
-            margin-top: 20px;
-        }
-
-        .form-field:focus {
-            border-color: #0f7ef1;
+      
+        .form-row {
+            width: 90%;
+            padding-top: 8px;
         }
 
         #register {
@@ -93,43 +58,63 @@
             color: #fff;
             letter-spacing: 1px;
             font-family: 'Rubik', sans-serif;
-            width: 93%;
+            width: 90%;
         }
         .to-login{
             color: rgba(0, 0, 0, 0.8);
             float: right;
             margin-right: 7%;
         }
-      
     </style>
 </head>
 
 <body>
-    <div class="parent">
-        <div class="container">
-            <div class="left">
+    <center>
+        <div class="form">
+            <br>
+            <form action="" class="" method="POST" autocomplete="false">
+                <div class="box">
                 <div class="header">
-                    <h1 class="animation a1">Register</h1>
-                    <h4 class="animation a2">Create your own account using the following fields</h4>
-                    <%- include('partial/messages') %>
+                    <h1>Register</h1>
+                    <h4>Create your own account using the following fields</h5>
+                </div><br>
+                <div class="form-row">
+                    <div class="message">
+                <%- include('partial/messages') %>
                 </div>
-                <div class="form">
-                    <form action="/users/register" method="POST" autocomplete="off">
-                    <input type="text" class="form-field " name="firstname" placeholder="First Name" value="<%= typeof firstname != 'undefined' ? firstname : '' %>">
-                    <input type="text" class="form-field" name="lastname"  placeholder="Last Name" value="<%= typeof lastname != 'undefined' ? lastname : '' %>">
-                    <input type="text" class="form-field"  name="address" placeholder="Address" value="<%= typeof address != 'undefined' ? address : '' %>">
-                    <input type="email" class="form-field"  name="email" placeholder="Email Address" value="<%= typeof email != 'undefined' ? email : '' %>">
-                    <input type="password"  class="form-field" name="password1" placeholder="Password" value="<%= typeof password1 != 'undefined' ? password1 : '' %>">
-                    <input type="password" class="form-field" name="password2" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
-                    <p></p>
-                    <button type="submit" id="register" class="animation ">Create Account</button>
-                   <p class="to-login">Have an account? <a class="login" href="/users/login">Login</a></p>
-                </form>
-                </div>
-            
             </div>
-        </div>
-    </div>
 
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="firstname" placeholder="First Name" value="<%= typeof firstname != 'undefined' ? firstname : '' %>">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="<%= typeof lastname != 'undefined' ? lastname : '' %>">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="address" placeholder="Address" value="<%= typeof address != 'undefined' ? address : '' %>">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" name="email" placeholder="Email Address" value="<%= typeof email != 'undefined' ? email : '' %>">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="password" class="form-control" name="password1" placeholder="Password" value="<%= typeof password1 != 'undefined' ? password1 : '' %>">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="password" class="form-control" name="password2" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
+                    </div>
+                </div><br>
+                <button type="submit" id="register" class="animation ">Create Account</button>
+                <p class="to-login">Have an account? <a class="login" href="/users/login">Login</a></p>
+            </div>
+            </form>
+            <br><br><br>
+        </div>
+    </center>
 </body>
+
 </html>
