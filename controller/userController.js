@@ -24,7 +24,7 @@ const userRegistration = (req, res) => {
         errors.push({ msg: 'Password must be at least 8 characters' });
     }
     if (errors.length > 0) {
-        res.render('register', {
+        res.render('forms/register', {
             errors,
             firstname,
             lastname,
@@ -36,8 +36,8 @@ const userRegistration = (req, res) => {
     else {
         User.findOne({ email: email }).then(user => {
             if (user) {
-                errors.push({ msg: 'Email already exists' });
-                res.render('register', {
+                errors.push({ msg: 'Email already exists. Please try another one' });
+                res.render('forms/register', {
                     errors,
                     firstname,
                     lastname,

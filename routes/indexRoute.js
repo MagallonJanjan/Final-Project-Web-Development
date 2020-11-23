@@ -7,10 +7,22 @@ router.get('/', forwardAuthenticated, (req,res)=>{
      res.render('welcome')
 });
 
-router.get('/dashboard', ensureAuthenticated, (req, res) =>
-  res.render('dashboard', {
+
+router.get('/jobs', ensureAuthenticated, (req, res) =>
+  res.render('adminviews/jobs', {
     user: req.user
   })
 );
 
+router.get('/applicants', ensureAuthenticated, (req, res) =>
+  res.render('adminviews/applicants', {
+    user: req.user
+  })
+);
+
+router.get('/createjob', ensureAuthenticated, (req, res) =>
+  res.render('adminviews/createjob', {
+    user: req.user
+  })
+);
 module.exports = router;

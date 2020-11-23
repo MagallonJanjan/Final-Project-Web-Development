@@ -1,0 +1,62 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap 3 Sidenav</title>
+    <link rel="stylesheet" href="/css/applicants.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+    <div class="two-col-layout" id="two-col-layout">
+        <div class="top-navbar">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                        <li><a class="toggle-sidenav"><i class="fa fa-bars"></i></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="fa fa-eye"><a href="#">Profile</a></li>
+                                <li class="fa fa-sign-out-alt"><a href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="sidenav" id="sidenav">
+            <div class="sidenav-items">
+                <ul id="accordion">
+                    <li class="panel">
+                        <h3>Jobchase.com</h3>
+                        <img src="/img/user-icon.png" alt="user-icon1" class="user-icon"><br><br>
+                        <p class="user"><%= user.firstname + " " + user.lastname %></p>
+                    </li>
+                    <li class="panel">
+                        <a data-toggle="collapse" data-parent="#accordion" href="/jobs">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i> Jobs
+                        </a>
+                    </li>
+                    <li><a href="/createjob"><i class="fa fa-plus"></i> Create Job</a></li>
+                    <li class="panel">
+                        <a data-toggle="collapse" data-parent="#accordion" href="/applicants">
+                            <i class="fa fa-users"></i> Applicants
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+
+        </div>
+
+        <!--jQuery-->
+        <!-- Bootstrap JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script src="/js/sidenav.js"></script>
