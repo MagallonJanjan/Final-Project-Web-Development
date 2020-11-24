@@ -225,3 +225,13 @@ a.btn-card {
     color: #fff;
 }
 
+.col-md-4 {
+   padding-bottom: 30px;
+}
+
+.remove {
+    float:right;
+    margin-top: -33px;
+    margin-right: 100px;
+}
+

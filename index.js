@@ -10,7 +10,6 @@ const path = require('path')
 const app = express();
 
 
-
 //Database setup
 const database = require("./services/dbConnection");
 database.connect();
@@ -50,6 +49,10 @@ app.use('/', require('./routes/indexRoute'))
 // User route
 app.use('/users', require('./routes/userRoute'))
 
+//Job Route
+const JobRoute = require('./routes/jobRoute')
+app.use(JobRoute);
+
 
 // Global variables
 app.use(function(req, res, next) {
@@ -58,6 +61,7 @@ app.use(function(req, res, next) {
   res.locals.error = req.flash('error');
   next();
 });
+
 
 const PORT = process.env.PORT || 8000;
 

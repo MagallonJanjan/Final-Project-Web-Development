@@ -7,13 +7,6 @@ router.get('/', forwardAuthenticated, (req,res)=>{
      res.render('welcome')
 });
 
-
-router.get('/jobs', ensureAuthenticated, (req, res) =>
-  res.render('adminviews/jobs', {
-    user: req.user
-  })
-);
-
 router.get('/applicants', ensureAuthenticated, (req, res) =>
   res.render('adminviews/applicants', {
     user: req.user

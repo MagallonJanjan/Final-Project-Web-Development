@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Bootstrap 3 Sidenav</title>
+    <title></title>
     <link rel="stylesheet" href="/css/jobs.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,7 +23,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i></a>
                             <ul class="dropdown-menu">
                                 <li class="fa fa-eye"><a href="#">Profile</a></li>
-                                <li class="fa fa-sign-out-alt"><a href="#">Logout</a></li>
+                                <li class="fa fa-sign-out-alt"><a href="">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -57,68 +56,32 @@
             <section class="details-card">
                 <div class="container1">
                     <div class="row">
+                        <%for(i=0 ; i < job.length; i++) { %>
                         <div class="col-md-4">
                             <div class="card-content">
                                 <div class="card-img">
-                                    <img src="https://placeimg.com/380/230/nature" alt="">
-                                    <span><h4>Sales Lady</h4></span>
+                                    <img class="mb-3 img-fluid" src="<%= job[i].image %>" alt="" style="width: 275px; height: 190px;">
+                                    <span><h4><%= job[i].status%></h4></span>
                                 </div>
                                 <div class="card-desc">
-                                    <h3>Sales Lady</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                                        voluptas totam</p>
-                                        <form action="">
-                                            <button type="submit" class="btn btn-info"> Update</button>
-                                            <form action="">
-                                             <button type="submit" class="btn btn-danger"> Remove</button>  
-                                          </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-content">
-                                <div class="card-img">
-                                    <img src="https://placeimg.com/380/230/animals" alt="">
-                                    <span><h4>Cashier</h4></span>
-                                </div>
-                                <div class="card-desc">
-                                    <h3>Cashier</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                                        voluptas totam</p>
-                                        <form action="">
-                                            <button type="submit" class="btn btn-info"> Update</button>
-                                            <form action="">
-                                             <button type="submit" class="btn btn-danger"> Remove</button>  
-                                          </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-content">
-                                <div class="card-img">
-                                    <img src="https://placeimg.com/380/230/tech" alt="">
-                                    <span><h4>Bagger</h4></span>
-                                </div>
-                                <div class="card-desc">
-                                    <h3>Bagger</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                                        voluptas totam</p>
-                                    <form action="">
-                                       <button type="submit" class="btn btn-info"> Update</button>
-                                       <form action="">
+                                    <h3><%= job[i].jobTitle%></h3>
+                                    <h4 class="text-success font-weight-bold">Salary: <%= job[i].salary%> </h4>
+                                    <p><%= job[i].jobDescription%></p>
+                                    <form action="/job/<%=job[i]._id %>/update">
+                                      <button type="submit" class="btn btn-info mr-1"> Update</button>
+                                    </form>
+                                       <form action="/<%=job[i]._id %>" method="POST" class="remove">
                                         <button type="submit" class="btn btn-danger"> Remove</button>  
                                      </form>
-                                    </form>
-                                   
                                 </div>
                             </div>
                         </div>
-                        
+                        <% }%>
                     </div>
                 </div>
             </section>
         </div>
-
+    </div>
         <!--jQuery-->
         <!-- Bootstrap JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

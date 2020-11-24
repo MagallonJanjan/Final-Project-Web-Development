@@ -24,7 +24,7 @@ const userRegistration = (req, res) => {
         errors.push({ msg: 'Password must be at least 8 characters' });
     }
     if (errors.length > 0) {
-        res.render('forms/register', {
+        res.render('auth/register', {
             errors,
             firstname,
             lastname,
@@ -77,13 +77,7 @@ const userRegistration = (req, res) => {
 };
 
 
-// const userLogin = (req, res, next) => {
-//     passport.authenticate('local', {
-//       successRedirect: '/dashboard',
-//       failureRedirect: '/users/login',
-//       failureFlash: true
-//     })(req, res, next);
-//   };
+
 
 
 //Handle user logout

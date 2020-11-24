@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap 3 Sidenav</title>
+    <link rel="stylesheet" href="/css/createjob.css">
+    <link rel="stylesheet" href="/css/update.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+    <form action="/jobs/:id/updated" method="POST" autocomplete="off">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-pencil"></span>
+                    Update Job</h4>
+            </div>
+                <div class="modal-body" style="padding: 5px;">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                            <input class="form-control" name="position" value="<%= job.jobTitle %>" type="text"
+                                required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                            <input class="form-control" name="salary"  value="<%= job.salary %>" type="text" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                            <input class="form-control" name="status" value="<%= job.status %>" type="text" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                            <input class="form-control" name="image" value="<%= job.image %>" type="text"
+                                required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <textarea style="resize:vertical;" class="form-control" value="<%= job.salary %>"
+                                rows="6" name="description" required></textarea>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12"></div>
+                    <button type="submit" id= "btn1" class="btn btn-success">Update Job</button>
+                    <a href="../../"><button type="button" class="btn btn-danger">Cancel</button></a>
+                    </div>
+                </div>
+        </div>
+    </form>
