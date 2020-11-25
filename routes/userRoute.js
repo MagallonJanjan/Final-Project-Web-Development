@@ -31,7 +31,7 @@ router.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
     if (err) { return next(err); }
     if (!user) { return res.render('auth/login',{
-      errors : [{msg : 'Unauthorizesd'}]
+      errors : [{msg : 'Invalid Credentials'}]
     }); }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
