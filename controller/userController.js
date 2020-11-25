@@ -4,6 +4,7 @@ const passport = require('passport')
 
 //Import user model
 const User = require('../models/userModel');
+const { render } = require('ejs');
 
 
 // Handle user registration
@@ -31,13 +32,14 @@ const userRegistration = (req, res) => {
             email,
             password1,
             password2
+            
         });
     }
     else {
         User.findOne({ email: email }).then(user => {
             if (user) {
                 errors.push({ msg: 'Email already exists. Please try another one' });
-                res.render('forms/register', {
+                res.render('auth/register', {
                     errors,
                     firstname,
                     lastname,
@@ -50,7 +52,8 @@ const userRegistration = (req, res) => {
                     firstname: firstname,
                     lastname: lastname,
                     email: email,
-                    password: password1
+                    password: password1,
+                    accountType : 'admin'   
                 });
 
                 console.log(newUser);
@@ -59,8 +62,7 @@ const userRegistration = (req, res) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
                         newUser.password = hash;
-                        newUser
-                            .save()
+                        newUser.save()
                             .then(user => {
                                 req.flash(
                                     'success_msg',

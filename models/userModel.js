@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now
+   },
+  accountType : {
+    type: String,
+    required: true
   }
 });
 

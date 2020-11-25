@@ -1,15 +1,20 @@
 module.exports = {
-    ensureAuthenticated: function(req, res, next) {
-      if (req.isAuthenticated()) {
-        return next();
-      }
+  ensureAuthenticated: function (req, res, next) {
+    console.log('ensure');
+    if (req.isAuthenticated()) {
+      return next();
+    } else {
       req.flash('error_msg', 'Please log in to view that resource');
       res.redirect('/users/login');
-    },
-    forwardAuthenticated: function(req, res, next) {
-      if (!req.isAuthenticated()) {
-        return next();
-      }
-      res.redirect('/jobs');      
     }
-  };
+
+  },
+  forwardAuthenticated: function (req, res, next) {
+    console.log('ensure');
+    if (!req.isAuthenticated()) {
+      return next();
+    }
+
+    res.redirect('/jobs');
+  }
+};
