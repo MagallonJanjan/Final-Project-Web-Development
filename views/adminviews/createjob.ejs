@@ -1,10 +1,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Bootstrap 3 Sidenav</title>
-    <link rel="stylesheet" href="/css/createjob.css">
+    <link rel="stylesheet" href="/css/admin/createjob.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -17,7 +18,7 @@
 </head>
 <div class="two-col-layout" id="two-col-layout">
     <div class="top-navbar">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="top_nav">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a class="toggle-sidenav"><i class="fa fa-bars"></i></a></li>
@@ -39,7 +40,7 @@
         <div class="sidenav-items">
             <ul id="accordion">
                 <li class="panel">
-                    <h3>Jobchase.com</h3>
+                    <h3>JobChase.com</h3>
                     <img src="/img/user-icon.png" alt="user-icon1" class="user-icon"><br><br>
                     <p class="user"><%= user.firstname + " " + user.lastname %></p>
                 </li>
@@ -62,7 +63,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-pencil"></span>
-                        Update Job</h4>
+                        Create Job</h4>
                 </div>
                     <div class="modal-body" style="padding: 5px;">
                         <div class="row">

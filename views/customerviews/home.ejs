@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="/css/admin/jobs.css">
+    <link rel="stylesheet" href="/css/customer/home.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -35,19 +35,19 @@
             <div class="sidenav-items">
                 <ul id="accordion">
                     <li class="panel">
-                        <h3>JobChase.com</h3>
+                        <h3>Welcome Home</h3>
                         <img src="/img/user-icon.png" alt="user-icon1" class="user-icon"><br><br>
                         <p class="user"><%= user.firstname + " " + user.lastname %></p>
                     </li>
                     <li class="panel">
-                        <a data-toggle="collapse" data-parent="#accordion" href="/jobs">
+                        <a data-toggle="collapse" data-parent="#accordion" href="/home">
                             <i class="fa fa-briefcase" aria-hidden="true"></i> Jobs
                         </a>
                     </li>
-                    <li><a href="/createjob"><i class="fa fa-plus"></i> Create Job</a></li>
+                    <li><a href="/categories"><i class="fa fa-folder-o"></i> Categories</a></li>
                     <li class="panel">
-                        <a data-toggle="collapse" data-parent="#accordion" href="/applicants">
-                            <i class="fa fa-users"></i> Applicants
+                        <a data-toggle="collapse" data-parent="#accordion" href="/terms">
+                            <i class="fa fa-file-text"></i> Terms and Condition
                         </a>
                     </li>
                 </ul>
@@ -68,12 +68,9 @@
                                     <h3><%= job[i].jobTitle%></h3>
                                     <h4 class="text-success font-weight-bold">Salary: <%= job[i].salary%> </h4>
                                     <p><%= job[i].jobDescription%></p>
-                                    <form action="/job/<%=job[i]._id %>/update">
-                                      <button type="submit" class="btn btn-info"> Update</button>
+                                    <form action="/apply/<%=job[i]._id %>/applyjob">
+                                      <button type="submit" class="btn btn-info"> Apply</button>
                                     </form>
-                                       <form action="/<%=job[i]._id %>" method="POST" class="remove">
-                                        <button type="submit" class="btn btn-danger"> Remove</button>  
-                                     </form>
                                 </div>
                             </div>
                         </div>

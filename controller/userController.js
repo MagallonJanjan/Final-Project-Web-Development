@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs')
 const { forwardAuthenticated } = require('../middleware/authentication');
 const passport = require('passport')
+const express = require('express');
 
 //Import user model
 const User = require('../models/userModel');
@@ -53,7 +54,7 @@ const userRegistration = (req, res) => {
                     lastname: lastname,
                     email: email,
                     password: password1,
-                    accountType : 'admin'   
+                    accountType : 'client'   
                 });
 
                 console.log(newUser);
@@ -80,8 +81,6 @@ const userRegistration = (req, res) => {
 
 
 
-
-
 //Handle user logout
 const userLogout = (req,res) =>{
     req.logout();
@@ -92,7 +91,6 @@ const userLogout = (req,res) =>{
 
 module.exports = {
     userRegistration,
-   //userLogin,
     userLogout
 
 }

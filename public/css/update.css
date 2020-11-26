@@ -11,13 +11,16 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    font-family: "Raleway";
     
 }
 
 #btn1 {
-    margin-left: 20px; 
+    margin-right: 5px; 
 }
 
 .btn {
-    margin-top: -20px;
+    margin-top: -10px;
+    float:right;
+    margin-right: 20px;
 }

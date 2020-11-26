@@ -1,5 +1,4 @@
 const express = require('express');
-const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -18,7 +17,7 @@ database.connect();
 require('./middleware/passport')(passport);
 
   // EJS
-app.use(expressLayouts);
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -52,6 +51,10 @@ app.use('/users', require('./routes/userRoute'))
 //Job Route
 const JobRoute = require('./routes/jobRoute')
 app.use(JobRoute);
+
+//Apply Route
+const applyRoute = require('./routes/applyRoute');
+app.use(applyRoute)
 
 
 // Global variables

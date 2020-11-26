@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
 }
 
 a {
@@ -12,6 +13,10 @@ a:hover,
 a:focus {
     text-decoration: none;
     outline: 0;
+}
+
+#top_nav{
+    border-color:  #3282b8;
 }
 
 .top-navbar {
@@ -233,5 +238,10 @@ a.btn-card {
     float:right;
     margin-top: -33px;
     margin-right: 100px;
+}
+
+.main-content {
+    margin-left: 9%;
+    margin-right: 9%;
 }
 

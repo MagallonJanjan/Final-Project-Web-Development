@@ -1,51 +1,57 @@
-
 <head>
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/auth/register.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
-    <center>
-        <div class="form">
-            <br>
-            <form action="" class="" method="POST" autocomplete="false">
-                <div class="box">
+<center>
+    <div class="form">
+        <br>
+        <form action="" class="" method="POST" autocomplete="false">
+            <div class="box">
                 <div class="header">
                     <h1>Register</h1>
                     <h4>Create your own account using the following fields</h5>
                 </div><br>
                 <div class="form-row">
                     <div class="message">
-                <%- include('../partial/messages') %>
+                        <%- include('../partial/messages') %>
+                    </div>
                 </div>
-            </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" name="firstname" placeholder="First Name" value="<%= typeof firstname != 'undefined' ? firstname : '' %>">
+                        <input type="text" class="form-control" name="firstname" placeholder="First Name"
+                            value="<%= typeof firstname != 'undefined' ? firstname : '' %>">
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="<%= typeof lastname != 'undefined' ? lastname : '' %>">
+                        <input type="text" class="form-control" name="lastname" placeholder="Last Name"
+                            value="<%= typeof lastname != 'undefined' ? lastname : '' %>">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" name="address" placeholder="Address" value="<%= typeof address != 'undefined' ? address : '' %>">
+                        <input type="text" class="form-control" name="address" placeholder="Address"
+                            value="<%= typeof address != 'undefined' ? address : '' %>">
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="email" class="form-control" name="email" placeholder="Email Address" value="<%= typeof email != 'undefined' ? email : '' %>">
+                        <input type="email" class="form-control" name="email" placeholder="Email Address"
+                            value="<%= typeof email != 'undefined' ? email : '' %>">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="password" class="form-control" name="password1" placeholder="Password" value="<%= typeof password1 != 'undefined' ? password1 : '' %>">
+                        <input type="password" class="form-control" name="password1" placeholder="Password"
+                            value="<%= typeof password1 != 'undefined' ? password1 : '' %>">
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="password" class="form-control" name="password2" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
+                        <input type="password" class="form-control" name="password2" placeholder="Confirm Password"
+                            value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
                     </div>
-                </div><br> 
-                <button type="submit" id="register" class="animation ">Create Account</button>
-                <p class="to-login">Have an account? <a class="login" href="/users/login">Login</a></p>
+                </div><br>
+                <button type="submit" id="register" class="animation ">CREATE ACCOUNT</button>
+                <br><br>
+                <p class="to-login">Already have an account? <a class="login" href="/users/login">Login</a></p>
             </div>
-            </form>
-            <br><br><br>
-        </div>
-    </center>
-
+        </form>
+        <br><br>
+    </div>
+</center>

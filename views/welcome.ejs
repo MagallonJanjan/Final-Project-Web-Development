@@ -1,22 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-</head>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/css/welcome.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="icon" href="../images/joChase.logo.png" type="image/png">
+
 <body>
-  <div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body text-center">
-        <p>Create an account or login</p>
-        <a href="/users/register" class="btn btn-primary btn-block mb-2">Register</a>
-        <a href="/users/login" class="btn btn-info btn-block">Login</a>
-      </div>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="/img/logo.png" alt="logo" class="logo"></a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-left w3-hide-small">
+                <h1 class="w3-right" style="margin-right: 5%;">JobChase.com</h1>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <!-- Header with full-height image -->
+    <header class="bgimg-1 w3-display-container " id="home">
+        <div class="w3-display-left w3-text-white" style="padding:48px">
+            <span class="w3-jumbo w3-hide-small">Find your new workplace!</span><br>
+            <span class="w3-xxlarge w3-hide-large w3-hide-medium">Find your new workplace!</span>
+            <span class="w3-large">Stop wasting time and get employed.</span>
+            <p> <a href="/users/register"><button type="button" data-toggle="modal" data-target=".bs-modal-sm"
+                        class="w3-button w3-blue w3-padding-large w3-large w3-margin-top w3-hover-white">Join with
+                        us and let's get started!</button></a></p>
+        </div>
+    </header><br><br>
+
+    <!-- Retrieve Job -->
+    <div style="margin: 100px 50px;">
+        <h3 class="w3-center">AVAILABLE JOBS</h3>
+        <div class="w3-row-padding w3-center" style="margin: 100px 0">
+            <div class="container1">
+                <div class="row">
+                    <%for(i=0 ; i < job.length; i++) { %>
+                    <div style="display: inline-flex;">
+                        <div class="card-content">
+                            <!-- <div class="card-img"> -->
+                            <img class="mb-3 img-fluid" src="<%= job[i].image %>" alt="" style="width: 275px; height: 190px;">
+                            <span class="job-status">
+                                <h5><%= job[i].status%></h5>
+                            </span>
+                            <!-- </div> -->
+                            <div class="card-desc">
+                                <h3><%= job[i].jobTitle%></h3>
+                                <h4 class="text-success font-weight-bold">Salary: <%= job[i].salary%> </h4>
+                                <p><%= job[i].jobDescription%></p>
+                                <a href="/users/register">
+                                    <button type="submit" class="btn btn-info mr-1"> Apply</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% }%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="w3-container" style="padding:150px 16px; background-color: lightblue;" id="about">
+        <h3 class="w3-center">ABOUT THE SYSTEM</h3>
+        <div class="w3-row-padding w3-center" style="margin-top:64px">
+            <div class="w3-quarter">
+                <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+                <p class="w3-large">Responsive</p>
+                <p>No hassle and unwanted problems is allowed.</p>
+            </div>
+            <div class="w3-quarter">
+                <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Passion</p>
+                <p>Certified and tested by the creators with all dedication to give a very satisfying product.</p>
+            </div>
+            <div class="w3-quarter">
+                <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Design</p>
+                <p>User-Friendly. Everything is easy to manipulate and understand.</p>
+            </div>
+            <div class="w3-quarter">
+                <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Support</p>
+                <p>Supported with reliable third-party companies to ensure confidentiality and functionalities.</p>
+            </div>
+        </div>
+    </div>
+    <!--    
+    Team Section
+    <div class="w3-container" style="padding:150px 16px; background-color: lightblue;" id="team">
+        <h3 class="w3-center">THE TEAM</h3>
+        <div class="w3-row-padding" style="margin-top:64px">
+            <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <img src="/img/john.jpg" alt="Joseph John Magallon" style="box-shadow: 10px 10px 5px darkgray; width: 280px; height: 300px; padding: 15px; margin: 45px;">
+                    <div class="w3-container">
+                        <h3>Joseph</h3>
+                        <p class="w3-opacity">Head Project Manager and Full-Stack Web Developer</p>
+                        <p>A graduate from University of San Carlos - Talamban Campus.</p>
+                        <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>
+                                Contact</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <img src="/img/reina.jpg" alt="Reina" style="box-shadow: 10px 10px 5px darkgray; width: 280px; height: 300px; padding: 15px; margin: 45px;">
+                    <div class="w3-container">
+                        <h3>Reina</h3>
+                        <p class="w3-opacity">Junior Front-End Web Developer and Graphic Designer</p>
+                        <p>A graduate from University of San Carlos - Talamban Campus.</p>
+                        <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>
+                                Contact</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 w3-margin-bottom">
+                <div class="w3-card">
+                    <img src="/img/jennifer.jpg" alt="Jennifer" style=" box-shadow: 10px 10px 5px darkgray; width: 280px; height: 300px; padding: 15px; margin: 45px;">
+                    <div class="w3-container">
+                        <h3>Jennifer</h3>
+                        <p class="w3-opacity">Information Systems Security and Graphic Designer </p>
+                        <p>A graduate from University of San Carlos - Talamban Campus.</p>
+                        <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>
+                                Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Contact Section -->
+    <div class="w3-container" style="padding: 150px 16px" id="contact">
+        <h3 class="w3-center">CONTACT</h3>
+        <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+        <div class="contact" style="margin-top:48px">
+            <div class="system-information">
+                <br><br>
+                <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Talamban, Cebu City, Philippines</p>
+                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +63 939 1326 624</p>
+                <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: jobChase@gmail.com</p>
+            </div>
+            <div>
+                <form action="/action_page.php" target="_blank">
+                    <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+                    <p>
+                        <button class="w3-button w3-black" type="submit">
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                        </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-d5 w3-padding-32" style="background-color:#3282b8;">
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity "></i>
+        </div>
+    </footer>
 </body>
+
 </html>

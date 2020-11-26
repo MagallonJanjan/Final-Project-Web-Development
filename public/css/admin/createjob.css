@@ -1,7 +1,9 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Raleway";
 }
 
 a {
@@ -12,6 +14,10 @@ a:hover,
 a:focus {
     text-decoration: none;
     outline: 0;
+}
+
+#top_nav{
+    border-color:  #3282b8;
 }
 
 .top-navbar {
@@ -120,3 +126,18 @@ a:focus {
 .panel>h3 {
     margin-left: 15px;
 }
+
+#btn1 {
+    margin-left: 20px; 
+}
+
+.btn {
+    margin-top: -20px;
+}
+
+.main-content {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+

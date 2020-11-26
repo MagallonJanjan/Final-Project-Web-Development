@@ -1,10 +1,11 @@
-body {
-    font-family: 'Rubik', sans-serif;
+* {
+    font-family: "Raleway";
 }
 
 .header>h1 {
     margin: 0;
     color: #4f46a5; 
+    font-family: 'Rubik', sans-serif;
 }
 
 .header>h4{
@@ -15,20 +16,22 @@ body {
 }
 
 .form {
-    width: 40%;
-    margin-top: 8%;
+    width: 33%;
+    margin-top: 5%;
     border-right: 2px solid #0097ff;
     border-left: 2px solid #4f46a5;
 }
 
-.form-text {
-    margin-left: -33%;
+.message {
+    color: red;
+    font-size: 14px;
+    margin-left: 11%;
+    
 }
 
-
-.form-group {
+.form-row {
     width: 90%;
-    padding-top: 10px;
+    padding-top: 8px;
 }
 
 #register {

@@ -1,0 +1,104 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/customer/apply.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="../images/joChase.logo.png" type="image/png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <title>jobChase</title>
+</head>
+
+<body>
+    <div id="main">
+        <!-- Sample Container1 -->
+        <div class="container"
+            style="background-color: lightblue; margin-top: 0.5in; margin-bottom: 0.5in; margin-left: 3in; border-radius: 10px; box-shadow: 10px 10px 10px lightgray; width: 60%; padding: 35px;">
+            <!-- Sample Column -->
+            <form method="POST" action="">
+            <div class="container"><br>
+                <h2>Create Resume</h2>
+                <hr><br>
+                <!-- Sample Grid -->
+                <h4>Personal Informations</h4>
+                <div class="row">
+                    <div class="col">
+                        <img src="/public/img/user-icon.png" alt="2x2 Photo" width="150px" height="150px"><br>
+                        <div class="btn-primary">
+                            <!-- <span>File</span> -->
+                            <input name="myImage" type="file" style="width: 10px;">
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="form-group">
+                            <input name="age" class="form-control" type="number" id="age" placeholder="Age " required>
+                        </div>
+                        <div class="form-group">
+                                <select class="custom-select" name=gender id="inputGroupSelect04">
+                                  <option selected>Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <input name="contactNum" class="form-control" type="number" id="contactNum"
+                                placeholder="Contact Number " required>
+                        </div>
+                    </div>
+                </div>
+                <hr><br>
+                <h4>Education</h4><br>
+                <div class="form-group">
+                    <input name="educAttain" class="form-control" id="educAttain"
+                        placeholder="Highest Educational Attainment " required>
+                </div>
+                <hr><br>
+                <h4>Work Experience</h4><br>
+                <div class="form-group">
+                    <input name="previousJob" class="form-control" id="previousJob" placeholder="Previous Job ">
+                </div>
+                <div class="form-group">
+                    <input name="previousCompany" class="form-control" id="previousCompany"
+                        placeholder="Company Name ">
+                </div>
+                <hr><br>
+                <h4>Skills</h4><br>
+                <div class="form-group">
+                    <input name="skills" class="form-control" id="skills" placeholder="Skills ">
+                </div>
+                <hr><br>
+                <h4>Certificates and Trainings</h4><br>
+                <div class="form-group">
+                    <textarea name="certificatesAndTrainings" class="form-control" id="certificatesAndTrainings"
+                        rows="3">Achieved  Certificates and Trainings </textarea>
+                </div>
+                <hr><br>
+                <h4>References</h4><br>
+                <div class="form-group">
+                    <input name="referenceName" class="form-control" id="referenceName" placeholder="Name " required>
+                </div>
+                <div class="form-group">
+                    <input name="referencAddress" class="form-control" id="referenceAddress"
+                        placeholder="Address " required>
+                </div><br>
+                <div style="float: right;">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+            </form>
+            <br>
+           
+        </div>
+    </div>
+</body>
+
+</html>
