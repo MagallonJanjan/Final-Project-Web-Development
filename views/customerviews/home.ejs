@@ -12,6 +12,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+    <%- include('../partial/hiddenLayout') %>
+    <input type="hidden" id="tempUserId" value="<%= user._id%>">
     <div class="two-col-layout" id="two-col-layout">
         <div class="top-navbar">
             <nav class="navbar navbar-inverse navbar-fixed-top" id="top_nav">
@@ -86,6 +88,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
         <script src="/js/sidenav.js"></script>
+        <script>
+            $(document).ready(()=>{
+             let userId = $("#tempUserId").val();
+            $("#userId").val(userId);
+            });
+        </script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@ const Job = require('../models/jobModel');
 
 const homeRetrieve = async(req, res) => {
     const job = await Job.find();
-    console.log(job);
+   
      res.render('welcome', {
        job : job
      })
@@ -13,6 +13,7 @@ const homeRetrieve = async(req, res) => {
 const customerHome = async(req, res) => {
   const job = await Job.find();
   console.log(job);
+  console.log(req.user);
    res.render('customerviews/home', {
      job : job,
      user : req.user

@@ -17,7 +17,7 @@ const addJob = (req, res) => {
             console.log(err);
         }
         res.redirect("jobs");
-        console.log(jobs)
+        
     });
 
 };
@@ -39,7 +39,7 @@ const getJobs = async (req, res) => {
             user: req.user
         });
     } catch (e) {
-        return response.status(404).json({
+        return res.status(404).json({
             error: e,
         });
     }

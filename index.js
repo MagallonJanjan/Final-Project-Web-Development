@@ -5,6 +5,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const bodyParser = require('body-parser')
 const path = require('path')
+const multer = require('multer');
 
 const app = express();
 
@@ -53,7 +54,7 @@ const JobRoute = require('./routes/jobRoute')
 app.use(JobRoute);
 
 //Apply Route
-const applyRoute = require('./routes/applyRoute');
+const applyRoute = require('./routes/resumeRoute');
 app.use(applyRoute)
 
 

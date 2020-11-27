@@ -10,15 +10,6 @@ router.get('/', forwardAuthenticated, JOB.homeRetrieve)
 //Customer home route
 router.get('/home', ensureAuthenticated, JOB.customerHome);
 
-router.get('/applicants', ensureAuthenticated, (req, res) =>
-  res.render('adminviews/applicants', {
-    user: req.user
-  })
-);
-
-
-
-
 
 //customer categories
 router.get('/categories', ensureAuthenticated, (req, res) =>
@@ -26,6 +17,7 @@ router.get('/categories', ensureAuthenticated, (req, res) =>
     user: req.user
   })
 );
+
 
 // customer terms
 router.get('/terms', ensureAuthenticated, (req, res) =>
