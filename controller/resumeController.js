@@ -5,7 +5,7 @@ const Job = require('../models/jobModel')
 
 const getJobForApply = async (req, res) => {
     try {
-        console.log("From resume controller: ",req.user);
+        console.log("From resume controller: ", req.user);
         await Job.findById(req.params.id, (err, jobs) => {
             if (err) {
                 return res.status(404).json({
@@ -28,7 +28,7 @@ const getJobForApply = async (req, res) => {
 };
 
 
-const createResume =  (req, res) => {
+const createResume = (req, res) => {
     try {
         var resume = {
             'user': req.body.userId,
@@ -45,7 +45,7 @@ const createResume =  (req, res) => {
             'referenceContact': req.body.referenceContact,
         }
 
-         Resume.create(resume, function (err, result) {
+        Resume.create(resume, function (err, result) {
             if (err) {
                 console.log(err);
             }
@@ -61,10 +61,10 @@ const createResume =  (req, res) => {
 }
 
 
-const retieveResume = async(req, res) => {
+const retieveResume = async (req, res) => {
     try {
-        const getResume = await Resume.find();
-        const getJob = await Job.find();
+        const getResume = await Resume.find().populate('user').populate('job');
+        console.log(req.user)
         if (!getResume) {
             return res.status(404).json({
                 error: "Error in getting Resume!",
@@ -73,7 +73,6 @@ const retieveResume = async(req, res) => {
         // console.log(resume);
         res.render("adminviews/applicants", {
             resume: getResume,
-            job: getJob,
             user: req.user
         });
     } catch (error) {
@@ -83,12 +82,33 @@ const retieveResume = async(req, res) => {
     }
 }
 
+const acceptResume = async(req, res) => {   
+    try {
+         await Resume.findByIdAndRemove({ _id: req.params.id }, (err, result) => {
+            if (err) {
+                return res.status(404).json({
+                    message: "Error uy11",
+                    err: err
+                });
+            }
+            res.redirect('/applicants')
+        })
+    }
+    catch (e) {
+        return res.status(404).json({
+            message: "Error uy",
+            err: e
+        })
+    }
+}
+
 
 
 
 module.exports = {
     getJobForApply,
     createResume,
-    retieveResume
-    
+    retieveResume,
+    acceptResume
+
 }

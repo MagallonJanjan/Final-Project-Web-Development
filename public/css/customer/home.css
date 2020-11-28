@@ -103,8 +103,9 @@ a:focus {
     left: -300px;
 }
 
-.nav {
-    color: #fff;
+#drop {
+    margin-top: 7px;
+    margin-right: 2px;
 }
 
 .user-icon {

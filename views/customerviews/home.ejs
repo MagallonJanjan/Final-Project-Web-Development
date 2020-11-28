@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -10,7 +11,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
+
 <body>
     <%- include('../partial/hiddenLayout') %>
     <input type="hidden" id="tempUserId" value="<%= user._id%>">
@@ -21,14 +27,19 @@
                     <ul class="nav navbar-nav">
                         <li><a class="toggle-sidenav"><i class="fa fa-bars"></i></a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="fa fa-eye"><a href="#">Profile</a></li>
-                                <li class="fa fa-sign-out-alt"><a href="">Logout</a></li>
+                    <ul class="nav navbar-nav navbar-right" id="drop">
+                        <div class="btn-group show-on-hover">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                Joseph John <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
                             </ul>
-                        </li>
+                        </div>
                     </ul>
                 </div>
             </nav>
@@ -63,15 +74,18 @@
                         <div class="col-md-4">
                             <div class="card-content">
                                 <div class="card-img">
-                                    <img class="mb-3 img-fluid" src="<%= job[i].image %>" alt="" style="width: 275px; height: 190px;">
-                                    <span><h4><%= job[i].status%></h4></span>
+                                    <img class="mb-3 img-fluid" src="<%= job[i].image %>" alt=""
+                                        style="width: 275px; height: 190px;">
+                                    <span>
+                                        <h4><%= job[i].status%></h4>
+                                    </span>
                                 </div>
                                 <div class="card-desc">
                                     <h3><%= job[i].jobTitle%></h3>
                                     <h4 class="text-success font-weight-bold">Salary: <%= job[i].salary%> </h4>
                                     <p><%= job[i].jobDescription%></p>
                                     <form action="/apply/<%=job[i]._id %>/applyjob">
-                                      <button type="submit" class="btn btn-info"> Apply</button>
+                                        <button type="submit" class="btn btn-info"> Apply</button>
                                     </form>
                                 </div>
                             </div>
@@ -82,18 +96,18 @@
             </section>
         </div>
     </div>
-        <!--jQuery-->
-        <!-- Bootstrap JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-        <script src="/js/sidenav.js"></script>
-        <script>
-            $(document).ready(()=>{
-             let userId = $("#tempUserId").val();
+    <!--jQuery-->
+    <!-- Bootstrap JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="/js/sidenav.js"></script>
+    <script>
+        $(document).ready(() => {
+            let userId = $("#tempUserId").val();
             $("#userId").val(userId);
-            });
-        </script>
+        });
+    </script>
 </body>
 
 </html>
