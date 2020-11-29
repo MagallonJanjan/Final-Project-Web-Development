@@ -150,3 +150,12 @@ a:focus {
     margin-left: 15%;
 }
 
+#myInput {
+    width: 90%;
+    font-size: 16px;
+    padding: 12px 20px 12px;
+    border: 1px solid black;
+    margin-bottom: 12px;
+    margin-left: 15%;
+  }
+
