@@ -1,8 +1,8 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Raleway";
 }
 
 a {
@@ -15,28 +15,21 @@ a:focus {
     outline: 0;
 }
 
-#top_nav{
-    border-color:  #3282b8;
-    font-size: 20px;
-}
-
 .top-navbar {
     color: #fff;
-}
 
-.dropdown-toggle{
-    margin-right: 20px;
 }
 
 .dropdown:hover>.dropdown-menu {
     display: block;
-    margin-right: 20px;
-    font-size: 16px;
 }
 
 .container-fluid {
     background-color: #3282b8;
     height: 50px;
+    margin: 0;
+
+
 }
 
 .two-col-layout {
@@ -96,10 +89,9 @@ a:focus {
     font-weight: 500;
 }
 
-/* 
 .toggle-content {
     padding-left: 0;
-} */
+}
 
 .toggle-content .sidenav {
     width: 0;
@@ -117,7 +109,7 @@ a:focus {
 }
 
 .user {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .panel {
@@ -127,75 +119,15 @@ a:focus {
 }
 
 .panel>h3 {
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
-.row {
-    margin-top: 40px;
-    padding: 0 10px;
+#btn1 {
+    margin-left: 20px; 
 }
 
-.clickable {
-    cursor: pointer;
+.btn {
+    margin-top: -20px;
 }
 
-.panel-heading div {
-    margin-top: -18px;
-    font-size: 15px;
-}
 
-.panel-heading div span {
-    margin-left: 5px;
-}
-
-.panel-body {
-    display: none;
-}
-
-#applicants {
-    width : 170%;
-    margin-left: 15%;
-}
-
-.icon{
-    color: white;
-}
-
-/*  */
-.filter{
-    width: 100%;
-    position: relative;
-    display: flex;
-}
-
-#myInput {
-    width: 35%;
-    border-right: none;
-    padding: 10px 5px 5px;
-    height: 36px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #9DBFAF;
-    margin-bottom: 15px;
-    margin-left: 50%;
-    border: 1px solid black;
-}
-
-#myInput:focus{
-    border: 3px solid #5fa5d3
-} 
-
-.searchButton {
-    width: 40px;
-    height: 36px;
-    border: 1px solid #5fa5d3;
-    background: #5fa5d3;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-    margin-right: 70px;
-    padding: 5px;
-}
-  

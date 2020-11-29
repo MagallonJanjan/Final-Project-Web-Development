@@ -1,0 +1,48 @@
+* {
+    font-family: "Raleway";
+}
+
+.header>h1 {
+    margin: 0;
+    color: #4f46a5; 
+}
+
+.header>h4{
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 19px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.form {
+    width: 40%;
+    margin-top: 8%;
+    border-right: 2px solid #0097ff;
+    border-left: 2px solid #4f46a5;
+}
+
+.form-text {
+    margin-left: -33%;
+}
+
+.form-group {
+    width: 90%;
+    padding-top: 10px;
+}
+
+#register {
+    padding: 12px 10px;
+    border: 0;
+    background: -webkit-gradient(linear, left top, right top, from(#de48b5), to(#0097ff));
+    background: linear-gradient(to right, #de48b5 0%, #0097ff 100%);
+    border-radius: 3px;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+    width: 90%;
+}
+.to-login{
+    color: rgba(0, 0, 0, 0.8);
+    float: right;
+    margin-right: 8%;
+}

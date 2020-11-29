@@ -14,20 +14,19 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
+
 <div class="two-col-layout" id="two-col-layout">
     <div class="top-navbar">
         <nav class="navbar navbar-inverse navbar-fixed-top" id="top_nav">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a class="toggle-sidenav"><i class="fa fa-bars"></i></a></li>
+                    <li><a class="toggle-sidenav"><i class="fa fa-bars icon"></i></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"
-                                aria-hidden="true"></i></a>
-                        <ul class="dropdown-menu">
-                            <li class="fa fa-eye"><a href="#">Profile</a></li>
-                            <li class="fa fa-sign-out-alt"><a href="#">Logout</a></li>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user icon" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu" style="width:auto;">
+                            <a href="#"><i class="fa fa-power-off icon" style="color: #5fa5d3; font-size: 18px;"></i>Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -37,10 +36,10 @@
     <div class="sidenav" id="sidenav">
         <div class="sidenav-items">
             <ul id="accordion">
-                <li class="panel">
+                <li class="panel"><br>
                     <h3>Administrator</h3>
                     <img src="/img/user-icon.png" alt="user-icon1" class="user-icon"><br><br>
-                    <p class="user"><%= user.firstname + " " + user.lastname %></p>
+                    <p class="user"><%= user.firstname + " " + user.lastname %></p><br>
                 </li>
                 <li class="panel">
                     <a data-toggle="collapse" data-parent="#accordion" href="/jobs">
@@ -55,14 +54,15 @@
                 </li>
             </ul>
         </div>
-    </div><br><br><br>
+    </div><br>
     <div class="main-content">
         <div class="row">
+            <div class="filter">
+                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for Job positions..."
+                    title="Type in a job position">
+                <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+            </div>
             <div class="col-md-6">
-                <div class="filter">
-                    <input type="text" id="myInput" onkeyup="filterTable()"
-                     placeholder=" Search for Job positions..." title="Type in a job position">
-                </div>
                 <div class="panel panel-primary" id="applicants">
                     <div class="panel-heading">
                         <h3 class="panel-title">Applicants</h3>
