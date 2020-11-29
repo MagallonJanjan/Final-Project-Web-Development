@@ -175,10 +175,10 @@ a:focus {
     height: 36px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: black;
     margin-bottom: 15px;
     margin-left: 50%;
-    border: 1px solid black;
+    border: 1px solid grey;
 }
 
 #myInput:focus{
