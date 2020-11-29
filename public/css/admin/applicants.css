@@ -30,7 +30,7 @@ a:focus {
 
 .dropdown:hover>.dropdown-menu {
     display: block;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     font-size: 16px;
 }
 
@@ -96,10 +96,10 @@ a:focus {
     font-weight: 500;
 }
 
-/* 
+
 .toggle-content {
     padding-left: 0;
-} */
+}
 
 .toggle-content .sidenav {
     width: 0;
