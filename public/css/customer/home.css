@@ -2,10 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Raleway";
 }
 
 a {
     cursor: pointer;
+}
+
+.icon{
+    color: white;
 }
 
 a:hover,
@@ -13,27 +18,29 @@ a:focus {
     text-decoration: none;
     outline: 0;
 }
-
 #top_nav{
     border-color:  #3282b8;
+    font-size: 20px;
 }
 
 .top-navbar {
     color: #fff;
-    border: none;
+}
 
+.dropdown-toggle{
+    margin-right: 20px;
 }
 
 .dropdown:hover>.dropdown-menu {
     display: block;
+    margin-right: 20px;
+    font-size: 16px;
 }
 
 .container-fluid {
     background-color: #3282b8;
     height: 50px;
     margin: 0;
-
-
 }
 
 .two-col-layout {
@@ -115,17 +122,16 @@ a:focus {
 }
 
 .user {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .panel {
     color: #fff;
     font-size: 20px;
-
-
 }
+
 .panel>h3 {
-    margin-left: 15px;
+    margin-left: 6px;
 }
 
 /* Start main content */
