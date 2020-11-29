@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Raleway";
+}
+
+.icon{
+    color: white;
 }
 
 a {
@@ -16,34 +21,34 @@ a:focus {
 
 #top_nav{
     border-color:  #3282b8;
+    font-size: 20px;
 }
 
 .top-navbar {
     color: #fff;
-    border: none;
-
 }
 
+.dropdown-toggle{
+    margin-right: 20px;
+}
 
 .dropdown:hover>.dropdown-menu {
     display: block;
+    margin-right: 20px;
+    font-size: 16px;
 }
 
 .container-fluid {
     background-color: #3282b8;
     height: 50px;
     margin: 0;
-
-
 }
 
 .two-col-layout {
     padding-top: 51.38px;
     padding-left: 250px;
     transition: padding-left 0.5s;
-    
 }
-
 
 .two-col-layout .top-navbar .badge {
     width: 18px;
@@ -108,6 +113,7 @@ a:focus {
     color: #fff;
 }
 
+
 .user-icon {
     width: 120px;
     height: 120px;
@@ -115,19 +121,17 @@ a:focus {
 }
 
 .user {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .panel {
     color: #fff;
     font-size: 20px;
-
-
 }
+
 .panel>h3 {
-    margin-left: 15px;
+    margin-left: 6px;
 }
-
 /* Start main content */
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:400,400i,700,700i');

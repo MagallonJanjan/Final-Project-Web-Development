@@ -18,6 +18,7 @@ a:focus {
     text-decoration: none;
     outline: 0;
 }
+
 #top_nav{
     border-color:  #3282b8;
     font-size: 20px;
@@ -47,9 +48,7 @@ a:focus {
     padding-top: 51.38px;
     padding-left: 250px;
     transition: padding-left 0.5s;
-    
 }
-
 
 .two-col-layout .top-navbar .badge {
     width: 18px;

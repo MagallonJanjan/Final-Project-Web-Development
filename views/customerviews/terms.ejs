@@ -17,23 +17,26 @@
             <nav class="navbar navbar-inverse navbar-fixed-top" id="top_nav">
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
-                        <li><a class="toggle-sidenav"><i class="fa fa-bars"></i></a></li>
+                        <li><a class="toggle-sidenav"><i class="fa fa-bars icon"></i></a></li>
                     </ul>
-                    
-                    <!-- diri buhati mak -->
-
-
-                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user icon" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="fa fa-sign-out-alt"><a href="#"><i class="fa fa-power-off icon" style="color: #5fa5d3; font-size: 18px; margin-right: 5px;"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </div>
         <div class="sidenav" id="sidenav">
             <div class="sidenav-items">
                 <ul id="accordion">
-                    <li class="panel">
+                    <li class="panel"><br>
                         <h3>Welcome Home</h3>
                         <img src="/img/user-icon.png" alt="user-icon1" class="user-icon"><br><br>
-                        <p class="user"><%= user.firstname + " " + user.lastname %></p>
+                        <p class="user"><%= user.firstname + " " + user.lastname %></p><br>
                     </li>
                     <li class="panel">
                         <a data-toggle="collapse" data-parent="#accordion" href="/home">
