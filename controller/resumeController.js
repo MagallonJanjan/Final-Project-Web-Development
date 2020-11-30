@@ -1,5 +1,6 @@
 const Resume = require('../models/resumeModel');
 const Job = require('../models/jobModel')
+const underScore = require('underscore');
 
 
 
@@ -64,7 +65,9 @@ const createResume = (req, res) => {
 const retieveResume = async (req, res) => {
     try {
         const getResume = await Resume.find().populate('user').populate('job');
-        console.log(req.user)
+        console.log(underScore.countBy(getResume, function (resume) {
+            return resume.job.jobTitle;
+        }))
         if (!getResume) {
             return res.status(404).json({
                 error: "Error in getting Resume!",
@@ -82,9 +85,28 @@ const retieveResume = async (req, res) => {
     }
 }
 
-const acceptResume = async(req, res) => {   
+const retrieveForDashboard = async(req, res) => {
     try {
-         await Resume.findByIdAndRemove({ _id: req.params.id }, (err, result) => {
+        const getResume =   await Resume.find().populate('user').populate('job');
+        const resumes =  await underScore.countBy(getResume, function (resume) {
+            return resume.job.jobTitle;
+        })
+        return res.render("adminviews/dashboard", {
+            user: req.user,
+            resume : resumes
+        });
+    }
+    catch (e) {
+        return res.status(404).json({
+            message : "Sayop uyy"
+        })
+    }
+
+}
+
+const acceptResume = async (req, res) => {
+    try {
+        await Resume.findByIdAndRemove({ _id: req.params.id }, (err, result) => {
             if (err) {
                 return res.status(404).json({
                     message: "Error uy11",
@@ -105,10 +127,13 @@ const acceptResume = async(req, res) => {
 
 
 
+
+
 module.exports = {
     getJobForApply,
     createResume,
     retieveResume,
-    acceptResume
+    acceptResume,
+    retrieveForDashboard
 
 }

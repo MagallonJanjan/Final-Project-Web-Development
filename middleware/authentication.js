@@ -1,6 +1,5 @@
 module.exports = {
   ensureAuthenticated: function (req, res, next) {
-    console.log('ensure');
     if (req.isAuthenticated()) {
       return next();
     } else {
@@ -10,11 +9,10 @@ module.exports = {
 
   },
   forwardAuthenticated: function (req, res, next) {
-    console.log('ensure');
     if (!req.isAuthenticated()) {
       return next();
     }
       
-    res.redirect('/jobs');
+    res.redirect('/dashboard');
   }
 };

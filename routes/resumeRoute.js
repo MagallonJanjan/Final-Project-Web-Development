@@ -7,6 +7,9 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../middleware/aut
 //get id to apply
 router.get('/apply/:id/applyjob', ensureAuthenticated, Apply.getJobForApply);
 
+//dashboard
+router.get('/dashboard', ensureAuthenticated, Apply.retrieveForDashboard)
+
 //post resume
 router.post('/apply/:id/', ensureAuthenticated, Apply.createResume )
 

@@ -25,7 +25,7 @@ router.post('/login', function(req, res, next) {
     req.logIn(user, function(err) {
       if (err) { return next(err); }
 
-      if(req.user.accountType == "admin") return res.redirect('/jobs')
+      if(req.user.accountType == "admin") return res.redirect('/dashboard')
       res.redirect('/home')
     });
   })(req, res, next);

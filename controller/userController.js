@@ -54,7 +54,7 @@ const userRegistration = (req, res) => {
                     lastname: lastname,
                     email: email,
                     password: password1,
-                    accountType : 'admin'   
+                    accountType : 'client'  
                 });
 
                 console.log(newUser);

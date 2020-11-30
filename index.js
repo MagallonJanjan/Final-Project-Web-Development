@@ -55,7 +55,11 @@ app.use(JobRoute);
 
 //Apply Route
 const applyRoute = require('./routes/resumeRoute');
-app.use(applyRoute)
+app.use(applyRoute);
+
+//Dashboard special route
+// const Dashboard = require('./routes/dashboardRoute');
+// app.use(Dashboard);
 
 
 // Global variables

@@ -7,6 +7,7 @@ const JOB = require('../controller/indexController')
 //Index Route
 router.get('/', forwardAuthenticated, JOB.homeRetrieve)
 
+
 //Customer home route
 router.get('/home', ensureAuthenticated, JOB.customerHome);
 
