@@ -85,24 +85,37 @@ const retieveResume = async (req, res) => {
     }
 }
 
-const retrieveForDashboard = async(req, res) => {
+
+//Dashboard
+const retrieveForDashboard = async (req, res) => {
     try {
-        const getResume =   await Resume.find().populate('user').populate('job');
-        const resumes =  await underScore.countBy(getResume, function (resume) {
+        const getResume = await Resume.find().populate('user').populate('job');
+        const resumes = await underScore.countBy(getResume, function (resume) {
             return resume.job.jobTitle;
         })
         return res.render("adminviews/dashboard", {
             user: req.user,
-            resume : resumes
+            resume: resumes
         });
     }
     catch (e) {
         return res.status(404).json({
-            message : "Sayop uyy"
+            message: "Sayop uyy123"
         })
     }
 
 }
+
+const analytics = async (req, res) => {
+    const getResume = await Resume.find().populate('user').populate('job');
+    const resumes = await underScore.countBy(getResume, function (resume) {
+        return resume.job.jobTitle;
+    })
+    res.json({
+        resume : resumes
+    })
+}
+
 
 const acceptResume = async (req, res) => {
     try {
@@ -134,6 +147,7 @@ module.exports = {
     createResume,
     retieveResume,
     acceptResume,
-    retrieveForDashboard
+    retrieveForDashboard,
+    analytics
 
 }

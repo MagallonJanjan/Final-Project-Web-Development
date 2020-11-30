@@ -10,6 +10,9 @@ router.get('/apply/:id/applyjob', ensureAuthenticated, Apply.getJobForApply);
 //dashboard
 router.get('/dashboard', ensureAuthenticated, Apply.retrieveForDashboard)
 
+//analytics 
+router.get('/dashboard/analytics', ensureAuthenticated, Apply.analytics)
+
 //post resume
 router.post('/apply/:id/', ensureAuthenticated, Apply.createResume )
 
