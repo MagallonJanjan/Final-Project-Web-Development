@@ -68,6 +68,7 @@
                                     <h3><%= job[i].jobTitle%></h3>
                                     <h4 class="text-success font-weight-bold">Salary: <%= job[i].salary%> </h4>
                                     <p><%= job[i].jobDescription%></p>
+                                   
                                     <form action="/job/<%=job[i]._id %>/update">
                                       <button type="submit" class="btn btn-info"> Update</button>
                                     </form>

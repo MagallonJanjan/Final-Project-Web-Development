@@ -11,7 +11,7 @@
      type: "GET",
      success: function (result) {
          console.log(result)
-        var arr = [result.resume.Cashier, result.resume, result.resume.Bagger,result.Bagger,result.Bagger,result.Bagger]
+        var arr = [result.resume.Cashier, result.resume["Security Guard"],result.resume.Bagger,result.resume.Janitor,result.resume["Sales Lady"],result.resume["Sales Man"]]
 
          var myChart = new Chart(ctx, {
              type: 'bar',

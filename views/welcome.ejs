@@ -56,6 +56,10 @@
                                 <h3><%= job[i].jobTitle%></h3>
                                 <h4 class="text-success font-weight-bold">Salary: <%= job[i].salary%> </h4>
                                 <p><%= job[i].jobDescription%></p>
+                                <p><b><%= "Posted on:" + " " %>
+                                    <%= job[i].date.getMonth() + 1 ;%>
+                                    <%= job[i].date.getDay() - 1;%>
+                                    <%= job[i].date.getFullYear();%></b></p>
                                 <a href="/users/register">
                                     <button type="submit" class="btn btn-info mr-1"> Apply</button>
                                 </a>
