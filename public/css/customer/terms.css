@@ -238,5 +238,18 @@ a.btn-card {
    padding-bottom: 30px;
 }
 
+.main-content {
+    margin: 5%;
+}
 
+.col-md{
+    text-align: justify; 
+    background-color: lightblue; 
+    padding: 7%;
+    border-radius: 10px; 
+    box-shadow: 10px 10px 10px lightgray; 
+}
 
+.terms{
+    text-indent: 60px;
+}
