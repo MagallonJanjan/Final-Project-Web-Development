@@ -47,7 +47,6 @@
                             <i class="fa fa-briefcase" aria-hidden="true"></i> Jobs
                         </a>
                     </li>
-                    <li><a href="/categories"><i class="fa fa-folder-o"></i> Categories</a></li>
                     <li class="panel">
                         <a data-toggle="collapse" data-parent="#accordion" href="/terms">
                             <i class="fa fa-file-text"></i> Terms and Condition
@@ -74,6 +73,10 @@
                                     <h3><%= job[i].jobTitle%></h3>
                                     <h4 class="text-success font-weight-bold">Salary: <%= job[i].salary%> </h4>
                                     <p><%= job[i].jobDescription%></p>
+                                    <p><b><%= "Posted on:" + " " %>
+                                        <%= job[i].date.getMonth() + 1 ;%>
+                                        <%= job[i].date.getDay() - 1;%>
+                                        <%= job[i].date.getFullYear();%></b></p>
                                     <form action="/apply/<%=job[i]._id %>/applyjob">
                                         <button type="submit" class="btn btn-info"> Apply</button>
                                     </form>

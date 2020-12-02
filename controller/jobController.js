@@ -3,6 +3,12 @@ const Job = require('../models/jobModel')
 
 // Add Job
 const addJob = (req, res) => {
+
+
+
+
+
+
     var job = {
         'jobTitle': req.body.position,
         'jobDescription': req.body.description,

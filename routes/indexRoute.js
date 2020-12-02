@@ -12,12 +12,7 @@ router.get('/', forwardAuthenticated, JOB.homeRetrieve)
 router.get('/home', ensureAuthenticated, JOB.customerHome);
 
 
-//customer categories
-router.get('/categories', ensureAuthenticated, (req, res) =>
-  res.render('customerviews/categories', {
-    user: req.user
-  })
-);
+
 
 
 // customer terms
