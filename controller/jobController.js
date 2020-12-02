@@ -3,31 +3,21 @@ const Job = require('../models/jobModel')
 
 // Add Job
 const addJob = (req, res) => {
-
-
-
-
-
-
     var job = {
         'jobTitle': req.body.position,
         'jobDescription': req.body.description,
         'image': req.body.image,
         'salary': req.body.salary,
         'status': req.body.status,
-
     }
-
     Job.create(job, function (err, jobs) {
         if (err) {
             console.log(err);
         }
-        res.redirect("jobs");
-        
+        res.redirect("jobs");   
     });
 
 };
-
 
 //Get Jobs
 const getJobs = async (req, res) => {
@@ -51,8 +41,7 @@ const getJobs = async (req, res) => {
     }
 };
 
-
-//Remove Job 
+//Remove Job by Id
 const removeJob = async (req, res) => {
     try {
         await Job.findByIdAndRemove({ _id: req.params.id }, (err, result) => {
@@ -73,6 +62,7 @@ const removeJob = async (req, res) => {
     }
 }
 
+//Get Id for the that is clicked and render into another page
 const getJobForUpdate = async(req,res) => {
     try{
           Job.findById(req.params.id, (err,jobs) => {
@@ -82,7 +72,6 @@ const getJobForUpdate = async(req,res) => {
                 })
             }
             // console.log(task);
-
             res.render("updates/update",{
                 job : jobs
             })
@@ -94,9 +83,10 @@ const getJobForUpdate = async(req,res) => {
             err : e
         })
     }
-
 };
 
+
+//Update the job
 const updateJob = async(req, res, ) => {
     try{
         const result = await Job.findOneAndUpdate(
@@ -116,14 +106,13 @@ const updateJob = async(req, res, ) => {
             err : e
         })
     }
-  
+
 }
+
 module.exports = {
     addJob,
     getJobs,
     removeJob,
     updateJob,
     getJobForUpdate,
-    
-
 }

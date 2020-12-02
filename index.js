@@ -1,24 +1,22 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const bodyParser = require('body-parser')
 const path = require('path')
-const multer = require('multer');
+
 
 const app = express();
-
 
 //Database setup
 const database = require("./services/dbConnection");
 database.connect();
 
-  // Passport Config
+  // Passport Configuration
 require('./middleware/passport')(passport);
 
-  // EJS
 
+  // EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -28,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+
 // Express session
 app.use(
   session({
@@ -36,6 +35,7 @@ app.use(
     saveUninitialized: true
   })
 );
+
 
 // Passport middleware
 app.use(passport.initialize());
@@ -48,19 +48,13 @@ app.use(flash());
 app.use('/', require('./routes/indexRoute'))
 // User route
 app.use('/users', require('./routes/userRoute'))
-
 //Job Route
 const JobRoute = require('./routes/jobRoute')
 app.use(JobRoute);
 
-//Apply Route
+//Resume Route
 const applyRoute = require('./routes/resumeRoute');
 app.use(applyRoute);
-
-//Dashboard special route
-// const Dashboard = require('./routes/dashboardRoute');
-// app.use(Dashboard);
-
 
 // Global variables
 app.use(function(req, res, next) {

@@ -79,8 +79,6 @@ const userRegistration = (req, res) => {
     }
 };
 
-
-
 //Handle user logout
 const userLogout = (req,res) =>{
     req.logout();

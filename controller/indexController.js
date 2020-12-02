@@ -1,6 +1,6 @@
 const Job = require('../models/jobModel');
 
-
+//Retrieving jobs in the index page
 const homeRetrieve = async(req, res) => {
     const job = await Job.find();
    
@@ -10,6 +10,7 @@ const homeRetrieve = async(req, res) => {
 
 }
 
+//Retrieving jobs in the landing page of client after login
 const customerHome = async(req, res) => {
   const job = await Job.find();
   console.log(job);

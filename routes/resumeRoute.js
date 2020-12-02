@@ -19,10 +19,8 @@ router.post('/apply/:id/', ensureAuthenticated, Apply.createResume )
 //get applicants, resume and id
 router.get('/applicants', ensureAuthenticated, Apply.retieveResume)
 
-//hire applicant and remove the resume
+//hire applicant or decline and remove the resume
 router.post('/hire/:id', ensureAuthenticated, Apply.acceptResume)
-
-
 
 
 module.exports = router

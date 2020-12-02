@@ -8,13 +8,10 @@ const passport = require('passport')
 router.get('/login', forwardAuthenticated,(req, res) => res.render('auth/login'))
 router.get('/register', forwardAuthenticated, (req, res) => res.render('auth/register'))
 
-
 //Handle Registration
 router.post('/register', USER.userRegistration);
 
-
 //Hadle login
-
 router.post('/login', function(req, res, next) {
   /* look at the 2nd parameter to the below call */
   passport.authenticate('local', function(err, user, info) {
@@ -33,7 +30,6 @@ router.post('/login', function(req, res, next) {
 
 // Logout
 router.get('/logout', USER.userLogout); 
-
 
 
 module.exports = router;

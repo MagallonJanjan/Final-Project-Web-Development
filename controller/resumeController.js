@@ -1,9 +1,10 @@
 const Resume = require('../models/resumeModel');
 const Job = require('../models/jobModel')
-const underScore = require('underscore');
+const underScore = require('underscore'); //used for my analytics
 
 
 
+//Get Job Id and render to a page that shows resume
 const getJobForApply = async (req, res) => {
     try {
         console.log("From resume controller: ", req.user);
@@ -25,10 +26,9 @@ const getJobForApply = async (req, res) => {
             err: e
         })
     }
-
 };
 
-
+//Client Creating his/her resume
 const createResume = (req, res) => {
     try {
         var resume = {
@@ -45,12 +45,10 @@ const createResume = (req, res) => {
             'referenceName': req.body.referenceName,
             'referenceContact': req.body.referenceContact,
         }
-
         Resume.create(resume, function (err, result) {
             if (err) {
                 console.log(err);
             }
-            console.log("nnnnnnnaa")
             res.redirect("/home");
         });
     }
@@ -62,6 +60,7 @@ const createResume = (req, res) => {
 }
 
 
+//Admin retrieve the resume that is created by the applicants
 const retieveResume = async (req, res) => {
     try {
         const getResume = await Resume.find().populate('user').populate('job');
@@ -85,8 +84,7 @@ const retieveResume = async (req, res) => {
     }
 }
 
-
-//Dashboard
+//Dashboard Retreive
 const retrieveForDashboard = async (req, res) => {
     try {
         const getResume = await Resume.find().populate('user').populate('job');
@@ -106,6 +104,7 @@ const retrieveForDashboard = async (req, res) => {
 
 }
 
+//Get the number of applicants per job and returns a json file to be use for analytics
 const analytics = async (req, res) => {
     const getResume = await Resume.find().populate('user').populate('job');
     const resumes = await underScore.countBy(getResume, function (resume) {
@@ -117,6 +116,10 @@ const analytics = async (req, res) => {
 }
 
 
+//Admin can remove the resume even if it is hired or not. 
+// The employ and remove are the same logic.
+// It will be remove in the database after the admin can read.
+ 
 const acceptResume = async (req, res) => {
     try {
         await Resume.findByIdAndRemove({ _id: req.params.id }, (err, result) => {
@@ -136,11 +139,6 @@ const acceptResume = async (req, res) => {
         })
     }
 }
-
-
-
-
-
 
 module.exports = {
     getJobForApply,

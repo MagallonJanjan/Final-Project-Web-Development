@@ -8,24 +8,15 @@ const JOB = require('../controller/indexController')
 router.get('/', forwardAuthenticated, JOB.homeRetrieve)
 
 
-//Customer home route
+//Customer landing page route
 router.get('/home', ensureAuthenticated, JOB.customerHome);
 
 
-
-
-
-// customer terms
+// customer terms and condition route
 router.get('/terms', ensureAuthenticated, (req, res) =>
   res.render('customerviews/terms', {
     user: req.user
   })
 );
 
-
-router.get('/createjob', ensureAuthenticated, (req, res) =>
-  res.render('adminviews/createjob', {
-    user: req.user
-  })
-);
 module.exports = router;
